@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+  background: #F4E640;
+  margin: 0;
+  font-family: 'Roboto';
+  font-size: 1.5em;  
+}
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  text-align: center;
+}
+header a {
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  display: inline-block;
+}
+header h1, header h2 {
+  margin: 0;
+}
+header span {
+  display: block;
+  line-height: 1em;
+}
+header span:first-child {
+  font-size: 1em;
+  font-weight: 400;
+}
+header span:last-child {
+  font-size: 1.5em;
+  font-weight: 800;
+}
+header h2 {
+  font-size: 1.2em;
+  font-weight: 400;
+}
+footer {
+  background: #111;
+  color: #bbb;
+  padding: 40px;
+  text-align: center;
+  margin-top: auto
+}
+.page-content {
+  max-width: 1200px;
+  margin: 20px auto 80px;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.navbar {
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  height: 60px;
+  padding: 10px 20px;
+  align-items: center;
+  background-color: transparent;
+  position: relative;
+}
+
+ul{
+  list-style-type: none;
+  display: flex;
+}
+
+li {
+  margin: 20px;
+  cursor: pointer;
+  border-bottom: 2px solid #F4E640;
+}
+li:hover {
+background-color: transparent;
+border-bottom: 2px solid black;
+}
+.navimg{
+  position: absolute;
+  left: 20px;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5); 
+  transition: transform .9s;
+}
+
+img {
+  width: 550px;
+  height: 380px;
+  margin: 10px 30px 0px 30px;
+  padding: 10px 20px 0px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+img:hover {
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1); 
+  transition: transform .9s;
+}
+
+.image {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  grid-gap: .5rem;
+  padding: 0 50px;
+}
+
+.button {
+  cursor : pointer;
+  margin: 0 30px;
+  padding: 0 20px;
+  width: 100px;
+}
+
+.button {
+  cursor: pointer;
+   
+    margin-bottom: 30px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top-width: 2px;
+    border-bottom-width: 2px
+}
+
+.img-bg {
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
