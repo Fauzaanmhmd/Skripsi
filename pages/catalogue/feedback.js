@@ -1,12 +1,9 @@
 import Layout from "../../components/Layout"
 import React, { useEffect, useState } from "react";
-import Router from "next/router";
-
-
 const Feedback = () => {
     const [showModal, setShowModal] = useState(false)
     const [namaCustomer, setnamaCustomer] = useState("")
-    const [keteragan, setketerangan] = useState("")
+    const [keterangan, setketerangan] = useState("")
     const [tgl_feedback, settgl_feedback] = useState("")
     const handleSubmit = () => {
         let dataFeedbacks = JSON.parse(localStorage.getItem("dataFeedbacks"))
@@ -15,11 +12,11 @@ const Feedback = () => {
 
         })
         dataFeedbacks[productLength]["namaCustomer"] = namaCustomer
-        dataFeedbacks[productLength]["keterangan"] = keteragan
+        dataFeedbacks[productLength]["keterangan"] = keterangan
         dataFeedbacks[productLength]["tgl_feedback"] = tgl_feedback
         localStorage.setItem('dataFeedbacks', JSON.stringify(dataFeedbacks));
         setShowModal(true)
-        Router.push(`../admin/datafeedback`);
+        // Router.push(`../admin/datafeedback`);
     }
     return (
         <Layout>
@@ -42,17 +39,8 @@ const Feedback = () => {
                             <textarea onChange={(e) => setketerangan(e.target.value)} id="subject" name="subject" placeholder="Write something.."></textarea>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-25">
-                            <label for="subject">Tanggal Feedback</label>
-                        </div>
-                        <div class="col-75">
-                            <input onChange={(e) => settgl_feedback(e.target.value)} type="text" id="subject" name="subject"></input>
-                        </div>
-                    </div>
                     <br></br>
                     <div class="row">
-                        {/* <input type="submit" value="Submit"></input> */}
                         <button className="form_button" onClick={handleSubmit}>Submit</button>
                     </div>
                 </section>

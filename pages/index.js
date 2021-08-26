@@ -1,7 +1,6 @@
 import Layout from "../components/Layout"
 
-export default function Recipes({ recipes }) {
-  console.log(recipes)
+export default function Home({ home }) {
   return (
     <Layout
       withBackground>

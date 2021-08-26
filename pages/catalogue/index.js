@@ -2,7 +2,7 @@ import Layout from "../../components/Layout"
 import Link from 'next/link'
 
 
-export default function Catalogue({ recipes }) {
+export default function Catalogue({ catalogue }) {
     const Products = [
         {
             imageUrl: "bisnis1.png",

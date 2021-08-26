@@ -5,8 +5,7 @@ const Background = props => {
         <div className="background">
             <div>
                 <div className="zoom_wrapper">
-                    <h1 className="zoom">RESWARA DIGITAL PRINTING</h1>
-                    {/* <p> Reswara menyediakan berbagai macam fasilitas untuk printing seperti printer dari segala merk, service</p> */}
+                    <h1>RESWARA DIGITAL PRINTING</h1>
                 </div>
                 <img className="bg_img" src="img/bg3.png"></img>
 

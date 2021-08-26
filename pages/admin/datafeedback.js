@@ -1,4 +1,3 @@
-import Router from "next/router";
 import LayoutAdmin from './LayoutAdmin'
 import { useEffect, useState } from 'react'
 
@@ -7,27 +6,14 @@ export default function DataFeedback({ Feedback }) {
         {
             namaCustomer: "Aulia Hakam",
             keterangan: "Proses pengiriman sangat cepat",
-            tgl_feedback: " 4 April 2021"
         },
         {
             namaCustomer: "Naufal Ahmad",
             keterangan: "Material Produk sangat bagus",
-            tgl_feedback: " 13 April 2021"
         },
         {
             namaCustomer: "Nazilla Geubrina",
             keterangan: "Pelayanan sangat ramah",
-            tgl_feedback: " 20 April 2021"
-        },
-        {
-            namaCustomer: "Aulia Hakam",
-            keterangan: "Proses pengiriman sangat cepat",
-            tgl_feedback: " 4 April 2021"
-        },
-        {
-            namaCustomer: "Aulia Hakam",
-            keterangan: "Proses pengiriman sangat cepat",
-            tgl_feedback: " 4 April 2021"
         }
 
     ])
@@ -50,15 +36,14 @@ export default function DataFeedback({ Feedback }) {
     return (
         <LayoutAdmin>
             <div className="recent_grid_table">
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <div className="card_body">
+                    <div className="table-responsive">
+                        <table className="table table_bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
                                     <th>No</th>
                                     <th>Nama Customer</th>
                                     <th>Keterangan</th>
-                                    <th>Tgl_Feedback</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -71,7 +56,6 @@ export default function DataFeedback({ Feedback }) {
                                                     <td>{i + 1}</td>
                                                     <td>{dataFeedback?.namaCustomer}</td>
                                                     <td>{dataFeedback?.keterangan}</td>
-                                                    <td>{dataFeedback?.tgl_feedback}</td>
                                                     <td>
                                                         <button onClick={() => handledelete(i)}>Hapus</button>
                                                     </td>

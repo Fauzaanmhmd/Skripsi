@@ -5,9 +5,24 @@ import React, { useEffect, useState } from "react";
 
 
 const Product = () => {
-
-
     const [showModal, setShowModal] = useState(false)
+    const [namaCustomer, setnamaCustomer] = useState("")
+    const [jumlahPesanan, setjumlahPesanan] = useState("")
+    const [uangMuka, setuangMuka] = useState("")
+    const [alamat, setAlamat] = useState("")
+    const handleSubmit = () => {
+        let dataRecentOrders = JSON.parse(localStorage.getItem("dataRecentOrders"))
+        const productLength = dataRecentOrders.length
+        dataRecentOrders.push({
+
+        })
+        dataRecentOrders[productLength]["namaCustomer"] = namaCustomer
+        dataRecentOrders[productLength]["jumlahPesanan"] = jumlahPesanan
+        dataRecentOrders[productLength]["uangMuka"] = uangMuka
+        dataRecentOrders[productLength]["alamat"] = alamat
+        localStorage.setItem('dataRecentOrders', JSON.stringify(dataRecentOrders));
+        setShowModal(true)
+    }
     const router = useRouter()
     console.log("🚀 ~ file: [productID].JS ~ line 5 ~ Product ~ router", router)
 
@@ -70,65 +85,63 @@ const Product = () => {
     return (
         <Layout>
             <div className="img_detailProduct">
-            <img className="img_product" src={`../img/${router.query.productID}`} alt="" />
-            <div className="form_catalogue">
-                <h3> Product :
-                    {
-                        Product[0]?.judulProduct
-                    }
-                </h3>
-                <p>
-                    Deskripsi:
-                    {
-                        Product[0]?.deskripsi
-                    }
-                </p>
+                <img className="img_product" src={`../img/${router.query.productID}`} alt="" />
+                <div className="form_catalogue">
+                    <h3> Product :
+                        {
+                            Product[0]?.judulProduct
+                        }
+                    </h3>
+                    <p>
+                        Deskripsi:
+                        {
+                            Product[0]?.deskripsi
+                        }
+                    </p>
+                </div>
+                <section>
+                    <h3 className="form">Pesan Disini</h3>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="fname">Nama Customer</label>
+                        </div>
+                        <div class="col-75">
+                            <input onChange={(e) => setnamaCustomer(e.target.value)} type="text" id="fname" name="firstname" placeholder="Your name.."></input>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="fname">Jumlah Pesanan</label>
+                        </div>
+                        <div class="col-75">
+                            <input onChange={(e) => setjumlahPesanan(e.target.value)} type="text" id="fname" name="firstname" placeholder="Jumlah"></input>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="bukti" >Bukti Pembayaran</label>
+                        </div>
+                        <div class="col-75">
+                            <input onChange={(e) => setuangMuka(e.target.value)} type="file" id="filegambar"></input>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="subject">Alamat</label>
+                        </div>
+                        <div class="col-75">
+                            <textarea onChange={(e) => setAlamat(e.target.value)} id="subject" name="subject" placeholder="Write something.."></textarea>
+                        </div>
+                    </div>
+                    <br></br>
+                    <Link href={`/catalogue/feedback`}>
+                        <button className="feedback_button">Give us a Feedback</button>
+                    </Link>
+                    <div className="row">
+                        <button className="form_button" onClick={handleSubmit}>Pesan</button>
+                    </div>
+                </section>
             </div>
-            <section>
-                <h3 className="form">Pesan Disini</h3>
-                <div class="row">
-                    <div class="col-25">
-                        <label for="fname">Nama Lengkap</label>
-                    </div>
-                    <div class="col-75">
-                        <input type="text" id="fname" name="firstname" placeholder="Your name.."></input>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-25">
-                        <label for="fname">Jumlah Pesanan</label>
-                    </div>
-                    <div class="col-75">
-                        <input type="number" id="fname" name="firstname" placeholder="Jumlah"></input>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-25">
-                        <label for="bukti" >Bukti Pembayaran</label>
-                    </div>
-                    <div class="col-75">
-                        <input type="file" id="filegambar"></input>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-25">
-                        <label for="subject">Alamat</label>
-                    </div>
-                    <div class="col-75">
-                        <textarea id="subject" name="subject" placeholder="Write something.."></textarea>
-                    </div>
-                </div>
-                <br></br>
-                <Link href={`/catalogue/feedback`}>
-                    <button className="feedback_button">Give us a Feedback</button>
-                </Link>
-                <div className="row">
-                    <button className="form_button" onClick={() => setShowModal(true)}>Pesan</button>
-                </div>
-            </section>
-            </div>
-
-
 
 
             {
@@ -149,3 +162,4 @@ const Product = () => {
     )
 }
 export default Product
+

@@ -4,10 +4,10 @@ export default function NavbarAdmin({ NavbarAdmin }) {
     return (
         <div className="main_content_nav">
             <h3>
-                <label for="nav_toggle">
+                <label>
                     <span className="las la-bars"></span>
                 </label>
-                Dashboarad
+                Dashboard
             </h3>
             <div className="search_wrapper">
                 <span className="las la-search"></span>

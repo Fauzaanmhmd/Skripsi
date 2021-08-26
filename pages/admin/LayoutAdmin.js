@@ -8,7 +8,6 @@ export default function LayoutAdmin({ children, withBackground, judul }) {
         <div id="page-top">
             <SidebarAdmin />
             <div className="main_content">
-                {/* aslinya header */}
                 <NavbarAdmin />
                 <main>
                     {children}

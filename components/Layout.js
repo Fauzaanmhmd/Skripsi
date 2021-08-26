@@ -13,20 +13,18 @@ export default function Layout({ children, withBackground, judul }) {
         withBackground &&
         <>
           <Background />
-          {
-            judul
-          }
         </>
       }
 
       <div className="page_content">
         {children}
       </div>
+
+
       <footer>
         <Footer />
       </footer>
     </div >
-
 
   )
 }

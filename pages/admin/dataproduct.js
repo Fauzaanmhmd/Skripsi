@@ -33,7 +33,7 @@ export default function DataProduct({ Product }) {
     }
     useEffect(() => {
         if (!localStorage.getItem("dataProducts"))
-            localStorage.setItem('dataProducts', JSON.stringify(dataProducts));
+            localStorage.setItem('dataProducts', JSON.stringify(dataProducts))
         else
             setDataProducts(JSON.parse(localStorage.getItem("dataProducts")))
     }, [])
@@ -43,12 +43,12 @@ export default function DataProduct({ Product }) {
 
         <LayoutAdmin>
             <div className="recent_grid_table">
-                <div class="card-body">
-                    <div class="table-responsive">
+                <div className="card_body">
+                    <div class="table_responsive">
                         <Link href={`./inputproduct`}>
                             <button className="input_button">Input Product</button>
                         </Link>
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <table className="table table_bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
                                     <th>No</th>

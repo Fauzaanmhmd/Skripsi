@@ -1,7 +1,5 @@
 import Layout from "../../components/Layout"
 import React, { useEffect, useState } from "react"
-import Router from "next/router"
-
 
 const InputProduct = () => {
     const [showModal, setShowModal] = useState(false)
@@ -21,7 +19,7 @@ const InputProduct = () => {
         localStorage.setItem('dataProducts', JSON.stringify(dataProducts));
         console.log(dataProducts);
         setShowModal(true)
-        Router.push(`/admin/dataproduct`);
+        // Router.push(`/admin/dataproduct`);
     }
     return (
         <Layout>
